@@ -1,0 +1,84 @@
+---
+layout: base.njk
+title: Contact
+description: Contact Steadfast Doula Care to schedule a free consultation or ask questions about birth and postpartum doula services.
+---
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Get in Touch</h1>
+    <p>I'd love to connect and learn about your family's needs.</p>
+  </div>
+</section>
+
+<section class="page-content">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <h2>Let's Talk</h2>
+        <p>
+          Whether you have questions about doula support, want to know if I have your
+          due date available, or are ready to book — I'm here and happy to chat.
+        </p>
+        <p>
+          I offer a <strong>free, no-obligation consultation</strong> (phone or video)
+          so we can get to know each other before you make any decisions.
+        </p>
+        <p>
+          <strong>Email:</strong><br />
+          <a href="mailto:hello@steadfastdoulacare.com">hello@steadfastdoulacare.com</a>
+        </p>
+        <p>
+          <strong>Phone / Text:</strong><br />
+          <a href="tel:+15550001234">(555) 000-1234</a>
+        </p>
+        <p>
+          <strong>Service Area:</strong><br />
+          [Your City] and surrounding communities
+        </p>
+        <p>
+          <strong>Response Time:</strong><br />
+          I respond to all inquiries within 24–48 hours.
+        </p>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <h2>Send a Message</h2>
+        <form class="contact-form" name="contact" method="POST" action="/thank-you/" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="contact" />
+          <p style="display:none;">
+            <label>Don't fill this out: <input name="bot-field" /></label>
+          </p>
+
+          <label for="name">Your Name *</label>
+          <input type="text" id="name" name="name" autocomplete="name" required placeholder="Jane Smith" />
+
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" autocomplete="email" required placeholder="jane@example.com" />
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(555) 000-0000" />
+
+          <label for="due-date">Estimated Due Date</label>
+          <input type="date" id="due-date" name="due-date" />
+
+          <label for="service">Service of Interest</label>
+          <select id="service" name="service">
+            <option value="">— Please select —</option>
+            <option value="birth-doula">Birth Doula Support</option>
+            <option value="postpartum-doula">Postpartum Doula Support</option>
+            <option value="both">Both Birth &amp; Postpartum Support</option>
+            <option value="not-sure">Not sure yet</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me a little about yourself and what you're looking for…"></textarea>
+
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+{
+  "name": "steadfast-doula-care",
+  "version": "1.0.0",
+  "description": "Steadfast Doula Care website",
+  "repository": "https://github.com/chrisculy/steadfast-doula-care",
+  "author": "chrisculy",
+  "license": "MIT",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
