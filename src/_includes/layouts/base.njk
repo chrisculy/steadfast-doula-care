@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% if title %}{{ title }} | {% endif %}Steadfast Doula Care</title>
+    <meta name="description" content="{% if description %}{{ description }}{% else %}Steadfast Doula Care — compassionate birth and postpartum doula services.{% endif %}" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="logo" aria-label="Steadfast Doula Care — Home">
+          <span class="logo-anchor" aria-hidden="true">&#9875;</span>
+          <span class="logo-text">Steadfast Doula Care</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open navigation menu">
+            <span></span><span></span><span></span>
+          </button>
+          <ul id="nav-menu" class="nav-menu">
+            <li><a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a></li>
+            <li><a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a></li>
+            <li><a href="/services/" {% if page.url == "/services/" %}aria-current="page"{% endif %}>Services</a></li>
+            <li><a href="/contact/" class="btn-nav" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      {{ content | safe }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; {{ year | default("2025") }} Steadfast Doula Care. All rights reserved.</p>
+        <p>Serving families with heart and dedication.</p>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.nav-menu');
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        menu.classList.toggle('is-open');
+      });
+    </script>
+  </body>
+</html>
