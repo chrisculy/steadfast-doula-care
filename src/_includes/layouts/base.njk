@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% if title %}{{ title }} | {% endif %}Steadfast Doula Care</title>
-    <meta name="description" content="{% if description %}{{ description }}{% else %}Steadfast Doula Care — compassionate birth and postpartum doula services.{% endif %}" />
+    <meta name="description" content="{% if description %}{{ description }}{% else %}Steadfast Doula Care — compassionate birth doula services by Vanessa Culy.{% endif %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;600;700&display=swap" />
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
@@ -34,7 +37,7 @@
 
     <footer class="site-footer">
       <div class="container">
-        <p>&copy; {{ year | default("2025") }} Steadfast Doula Care. All rights reserved.</p>
+        <p>&copy; <span id="copyright-year"></span><noscript>2026</noscript> Steadfast Doula Care. All rights reserved.</p>
         <p>Serving families with heart and dedication.</p>
       </div>
     </footer>
@@ -47,6 +50,11 @@
         toggle.setAttribute('aria-expanded', String(!expanded));
         menu.classList.toggle('is-open');
       });
+
+      const yearEl = document.getElementById('copyright-year');
+      if (yearEl) {
+        yearEl.textContent = String(new Date().getFullYear());
+      }
     </script>
   </body>
 </html>
